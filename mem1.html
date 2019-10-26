@@ -180,7 +180,6 @@ window.onload = function(){
             }
 
             if(game.cardShown == 2) {
-              console.log('dwie karty');
               var card1 = game.cards[game.shownCards[0]];
               var card2 = game.cards[game.shownCards[1]];
 
@@ -191,7 +190,6 @@ window.onload = function(){
                 game.cardShown = 0;
               }else {
                 setTimeout(function() {
-                  console.log('no point');
                   game.shownCards.forEach(function(card){
                     document.getElementById('card-' + card).classList.remove("cardShown" + game.cards[card]);
                     document.getElementById('card-' + card).classList.add("cardHidden");
