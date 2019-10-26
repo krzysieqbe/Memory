@@ -67,8 +67,45 @@
 
   .cardShown {
     color:orangered;
-    background-image: none;
-    background-color: bisque !important;
+    background-image: url("Chase_PNG.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+  }
+  .cardShown1 {
+    color:orangered;
+    background-image: url("Chase.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+  }
+  .cardShown2 {
+    color:orangered;
+    background-image: url("Marshall.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+  }
+  .cardShown3 {
+    color:orangered;
+    background-image: url("Rocky.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+  }
+  .cardShown4 {
+    color:orangered;
+    background-image: url("Skye.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+  }
+  .cardShown5 {
+    color:orangered;
+    background-image: url("Rubble.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+  }
+  .cardShown6 {
+    color:orangered;
+    background-image: url("Zuma.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
   }
 
 </style>
@@ -123,13 +160,14 @@ window.onload = function(){
         } while(cardFound > 1)
         game.cards[i] = cardValue;
 
-        html += '<div class="card cardHidden" id="card-' + i + '">' + cardValue + '</div>';
+        //html += '<div class="card cardHidden" id="card-' + i + '">' + cardValue + '</div>';
+        html += '<div class="card cardHidden" id="card-' + i + '"></div>';
       }
       document.getElementById("gameWindow").innerHTML = html;
       for(i=0;i<12;i++){
         document.getElementById("card-" + i).addEventListener("click", function _toggleCard() {
           var cardId = this.id.replace( /^\D+/g, '');
-          console.log(game.cardShown);
+          var cardValue = game.cards[cardId];
           game.shownCards[game.cardShown] = cardId;
           game.cardShown++;
 
@@ -138,7 +176,7 @@ window.onload = function(){
           }else {
             if(this.classList[1] == 'cardHidden'){
               this.classList.remove("cardHidden");
-              this.classList.add("cardShown");
+              this.classList.add("cardShown" + cardValue);
             }
 
             if(game.cardShown == 2) {
@@ -155,7 +193,7 @@ window.onload = function(){
                 setTimeout(function() {
                   console.log('no point');
                   game.shownCards.forEach(function(card){
-                    document.getElementById('card-' + card).classList.remove("cardShown");
+                    document.getElementById('card-' + card).classList.remove("cardShown" + game.cards[card]);
                     document.getElementById('card-' + card).classList.add("cardHidden");
                   });
                   game.shownCards = [];
