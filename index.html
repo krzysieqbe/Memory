@@ -169,10 +169,15 @@ window.onload = function(){
           var cardId = this.id.replace( /^\D+/g, '');
           var cardValue = game.cards[cardId];
           game.shownCards[game.cardShown] = cardId;
-          game.cardShown++;
+          if(game.shownCards[game.cardShown-1] == cardId) {
+            //clicked the same card
+          }else{
+            game.cardShown++;
+          }
+          
 
           if(game.cardShown > 2){
-            game.checkCards();
+            
           }else {
             if(this.classList[1] == 'cardHidden'){
               this.classList.remove("cardHidden");
@@ -188,6 +193,9 @@ window.onload = function(){
                 document.getElementById("gamePoints").innerHTML = 'Points : ' + game.points;
                 game.shownCards = [];
                 game.cardShown = 0;
+                if(game.points == 6) {
+                  alert("You WON !!!!")
+                }
               }else {
                 setTimeout(function() {
                   game.shownCards.forEach(function(card){
