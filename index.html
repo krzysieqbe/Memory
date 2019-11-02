@@ -170,12 +170,9 @@ window.onload = function(){
           var cardId = this.id.replace( /^\D+/g, '');
           var cardValue = game.cards[cardId];
           game.shownCards[game.cardShown] = cardId;
-          if(game.shownCards[game.cardShown-1] == cardId) {
-            //clicked the same card
-          }else{
+          if(this.classList[1] == 'cardHidden') {
             game.cardShown++;
           }
-          
 
           if(game.cardShown > 2){
             
