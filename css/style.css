@@ -1,0 +1,127 @@
+html {
+    height: 95%;
+    width: 94%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+h1,
+p,
+div {
+    cursor: default;
+}
+
+button {
+    cursor: pointer;
+}
+
+#mainWrapper {
+    height: 100%;
+}
+
+#gameCanvas {
+    display: grid;
+    grid-template-columns: .3fr 1fr;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    height: 75%;
+    width: 95%;
+}
+
+#gameWindow {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: azure;
+    border-style: solid;
+    border-color: cornflowerblue;
+    height: 100%;
+    padding-left: 4%;
+    background-image: url("../img/AdventureBay.png");
+    background-size: cover;
+}
+
+.card {
+    cursor: pointer;
+    border-style: solid;
+    width: 50%;
+    height: 80%;
+    text-align: center;
+    background-image: url("../img/PawPatrol.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-color: orangered;
+}
+
+.cardHidden {
+    color: transparent;
+}
+
+.cardShown {
+    color: orangered;
+    background-image: url("Chase_PNG.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white !important;
+}
+
+.cardShown1 {
+    color: orangered;
+    background-image: url("../img/Chase.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.cardShown2 {
+    color: orangered;
+    background-image: url("../img/Marshall.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.cardShown3 {
+    color: orangered;
+    background-image: url("../img/Rocky.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.cardShown4 {
+    color: orangered;
+    background-image: url("../img/Skye.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.cardShown5 {
+    color: orangered;
+    background-image: url("../img/Rubble.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.cardShown6 {
+    color: orangered;
+    background-image: url("../img/Zuma.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.cardShown7 {
+    color: orangered;
+    background-image: url("../img/Tracker.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
+
+.cardShown8 {
+    color: orangered;
+    background-image: url("../img/Everest.png");
+    background-repeat: no-repeat;
+    background-color: white !important;
+}
