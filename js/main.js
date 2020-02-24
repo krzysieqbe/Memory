@@ -7,6 +7,7 @@ window.onload = function() {
         this.cardShown = 0;
         this.shownCards = [0, 0];
         this.points = 0;
+        this.time = -1;
 
         this.newGame = function() {
             var windowHeight, windowWidth;
@@ -17,8 +18,15 @@ window.onload = function() {
             game.cardShown = 0;
             game.shownCards = [0, 0];
             game.points = 0;
-            document.getElementById("gamePoints").innerHTML = 'Points : ' + game.points;
+            game.time = 0;
+            //document.getElementById("gamePoints").innerHTML = 'Points : ' + game.points;
             game.renderCards();
+            setInterval(function() {
+                if (game.time >= 0 && game.points < 8) {
+                    game.time += .5;
+                    document.getElementById("gameTime").innerHTML = ' : ' + parseInt(game.time);
+                }
+            }, 500);
         };
 
         this.renderCards = function() {
@@ -65,7 +73,7 @@ window.onload = function() {
 
                             if (card1 == card2) {
                                 game.points++;
-                                document.getElementById("gamePoints").innerHTML = 'Points : ' + game.points;
+                                //document.getElementById("gamePoints").innerHTML = 'Points : ' + game.points;
                                 game.shownCards = [];
                                 game.cardShown = 0;
                                 if (game.points == 8) {
