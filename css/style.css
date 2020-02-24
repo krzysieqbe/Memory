@@ -25,7 +25,7 @@ button {
 
 #gameCanvas {
     display: grid;
-    grid-template-columns: .3fr 1fr;
+    grid-template-columns: .1fr 1fr;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 5%;
